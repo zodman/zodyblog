@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 23
+/svn/!svn/ver/101/trunk
+END
+manage.py
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/2/trunk/manage.py
+END
+media
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/40/trunk/media
+END
+sql
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/101/trunk/sql
+END
+all.json
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/102/trunk/all.json
+END
+.ignore
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/21/trunk/.ignore
+END
+contact.py
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/103/trunk/contact.py
+END
+meteora.py
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/102/trunk/meteora.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/trunk/__init__.py
+END
+links.json
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/63/trunk/links.json
+END
+mdx_codehilite.py
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/102/trunk/mdx_codehilite.py
+END
+twitter.py
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/94/trunk/twitter.py
+END
+cp.py
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/114/trunk/cp.py
+END
+urls.py
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/103/trunk/urls.py
+END

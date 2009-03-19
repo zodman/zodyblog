@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/113/trunk/compress/filters/csstidy_python
+END
+data.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/113/trunk/compress/filters/csstidy_python/data.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/113/trunk/compress/filters/csstidy_python/__init__.py
+END
+output.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/113/trunk/compress/filters/csstidy_python/output.py
+END
+tools.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/113/trunk/compress/filters/csstidy_python/tools.py
+END
+csstidy.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/113/trunk/compress/filters/csstidy_python/csstidy.py
+END
+optimizer.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/113/trunk/compress/filters/csstidy_python/optimizer.py
+END

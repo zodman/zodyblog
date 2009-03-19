@@ -1,0 +1,340 @@
+*
+{
+margin: 0px;
+padding: 0px;
+}
+
+body
+{
+background-color: #fff;
+font-size: 12px;
+font-family: verdana,tahoma,helvetica, sans-serif;
+}
+
+a, a:active, a:visited
+{
+text-decoration: underline;
+color: #4b5c00;
+}
+
+a:hover
+{
+text-decoration: none;
+color: #fff;
+background: #D3E378 url('/static/images/bbg1.gif') repeat-x;
+}
+a img {
+text-decoration:none;
+border:none;
+background: none;
+}
+strong
+{
+background: inherit;
+color: #50514D;
+}
+
+#header
+{
+width: 100%;
+height: 104px;
+background-color: #4d4d4d;
+background: url('/static/images/a1.gif') repeat-x;
+color: #ffffff;
+}
+
+#header_inner
+{
+position: relative;
+width: 680px;
+height: 104px;
+margin: 0px auto;
+}
+
+#header_inner h1
+{
+background: inherit;
+position: absolute;
+left: 0px;
+bottom: 30px;
+text-transform: lowercase;
+font-size: 39px;
+color: #fff;
+font-weight: normal;
+letter-spacing: -2px;
+}
+
+#header_inner h1 span
+{
+background: inherit;
+color: #DADADA;
+}
+
+#slogan
+{
+background: inherit;
+position: absolute;
+top: 25px;
+left:350px;
+color: #DADADA;
+text-transform: lowercase;
+}
+
+#main
+{
+padding-top: 20px;
+width: 940px;
+margin-left: auto;
+margin-right: auto;
+padding-bottom: 10px;
+}
+
+#menu ul
+{
+list-style: none;
+margin: 0px;
+}
+
+#menu li
+{
+background: none;
+padding: 0px;
+font-weight: bold;
+}
+
+#menu a
+{
+display: block;
+position: relative;
+width: 168px;
+height: 27px;
+margin-bottom: 1px;
+text-decoration: none;
+background: inherit;
+background-image: url('/static/images/bbg0.gif');
+padding-left: 17px;
+padding-top: 11px;
+color: #636363;
+text-transform: lowercase;
+font-size: 13px;
+}
+
+#menu a span
+{
+position: absolute;
+right: 0px;
+margin-top: 5px;
+margin-right: 15px;
+width: 7px;
+height: 7px;
+background: url('/static/images/x1.gif') no-repeat; 
+}
+
+#menu a:hover span
+{
+position: absolute;
+right: 0px;
+margin-top: 5px;
+margin-right: 15px;
+width: 7px;
+height: 7px;
+background: url('/static/images/x2.gif') no-repeat;
+}
+
+#menu a:hover
+{
+background: inherit;
+color: #fff;
+background-image: url('/static/images/bbg1.gif');
+}
+
+#menu_end
+{
+height: 60px;
+}
+
+h1
+{
+background: inherit;
+color: #50514D;
+text-transform: lowercase;
+font-size: 26px;
+}
+
+h1 span
+{
+background: inherit;
+color: #85AC1E;
+}
+
+h1 span sup
+{
+background: inherit;
+color: #85AC1E;
+font-size: 14px;
+}
+
+h3
+{
+background: inherit;
+color: #50514D;
+font-size: 15px;
+text-transform: lowercase;
+height: 34px;
+background: url('/static/images/a3.gif') repeat-x 0px 17px;
+}
+
+h3 span
+{
+background: inherit;
+color: #85AC1E;
+}
+
+h3.first
+{
+margin-top: 0px;
+}
+
+#lcol
+{
+width: 185px;
+float: left;
+}
+
+#lcontent
+{
+padding: 0px 15px 0px 15px;
+}
+#lcontent p {
+	font-size:7pt;
+	color: #aaa;
+}
+
+#rcontent p {
+	margin-bottom:20px;
+	margin-top:20px;
+}
+
+#rcontent
+{
+padding: 5px 0px 0px 20px;
+}
+
+ul
+{
+list-style: none;
+}
+
+li
+{
+background: url('/static/images/x1.gif') no-repeat 0px 5px;
+padding-left: 15px;
+}
+
+
+.divider
+{
+font-size: 0px;
+border-bottom: solid 1px #F5F5F5;
+height: 1px;
+width: 100%;
+margin: 10px 0px 10px 0px;
+}
+
+.summary
+{
+text-align: right;
+font-style: italic;
+}
+
+ul.divided li
+{
+border-top: solid 1px #F5F5F5;
+margin-top: 4px;
+padding-top: 4px;
+background-position: 0px 9px;
+}
+
+ul.divided li.first
+{
+border-top: 0px;
+margin-top: 0px;
+padding-top: 0px;
+background-position: 0px 5px;
+}
+
+#rcol
+{
+margin-left: 190px;
+/*background-image: url('/static/images/a2.gif');*/
+background-repeat: repeat-x;
+}
+
+#slogan2
+{
+font-size: 14px;
+}
+
+.box
+{
+border: dashed 1px #dadada;
+margin-top: 15px;
+background: inherit;
+color: #AAB165;
+}
+
+h2{
+    font-size:20pt;
+    color:#636363;
+}
+.box h2
+{
+background: inherit;
+text-transform: lowercase;
+font-weight: normal;
+font-size: 18px;
+margin-bottom: 5px;
+}
+
+.box p
+{
+font-size: 10px;
+line-height: 16px;
+margin: 0px;
+}
+
+.box_inner
+{
+border: solid 1px #fff;
+padding: 15px;
+background: #FFFFE9 url('/static/images/a4.gif') repeat-x;
+color: inherit;
+}
+
+.captioned_image
+{
+padding-bottom: 15px;
+float: left;
+margin-right: 17px;
+}
+
+.captioned_image div
+{
+position: absolute;
+font-size: 9px;
+bottom: 0px;
+left: 0px;
+}
+
+#footer
+{
+clear: both;
+background: url('/static/images/a2.gif') repeat-x;
+width: 680px;
+margin: 0px auto;
+margin-bottom: 25px;
+padding-top: 10px;
+text-align: center;
+text-transform: lowercase;
+}
+

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/101/trunk/zodycomments
+END
+views.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/103/trunk/zodycomments/views.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/26/trunk/zodycomments/__init__.py
+END
+models.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/43/trunk/zodycomments/models.py
+END
+urls.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/44/trunk/zodycomments/urls.py
+END

@@ -1,0 +1,18 @@
+{% for t in tipos %}
+<div class="contenido">
+    <div class="title">{{t.nombre}}</div>
+    {% for l in t.link_set.all %}
+
+        <div class="link">
+        {% ifnotequal l.imagen '' %}
+         <img src="{{l.imagen}}" title="{{l.nombre}}" alt="{{l.nombre}}">
+         {% endifnotequal %}
+         <a href="{{l.direccion}}">  {{l.nombre}} </a>
+         </div>
+    {% endfor %}
+
+</div>
+{% endfor %}
+<div class="right">
+<span class="a" onclick="closeLinks()">Close</span>
+</div>

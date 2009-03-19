@@ -1,0 +1,4 @@
+
+Fx.Styles=Fx.Base.extend({initialize:function(el,options){this.element=$(el);this.parent(options);},setNow:function(){for(var p in this.from)this.now[p]=this.css[p].getNow(this.from[p],this.to[p],this);},set:function(to){var parsed={};this.css={};for(var p in to){this.css[p]=Fx.CSS.select(p,to[p]);parsed[p]=this.css[p].parse(to[p]);}
+return this.parent(parsed);},start:function(obj){if(this.timer&&this.options.wait)return this;this.now={};this.css={};var from={},to={};for(var p in obj){var parsed=Fx.CSS.parse(this.element,p,obj[p]);from[p]=parsed.from;to[p]=parsed.to;this.css[p]=parsed.css;}
+return this.parent(from,to);},increase:function(){for(var p in this.now)this.element.setStyle(p,this.css[p].getValue(this.now[p],this.options.unit,p));}});Element.extend({effects:function(options){return new Fx.Styles(this,options);}});

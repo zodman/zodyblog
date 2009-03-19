@@ -1,0 +1,3 @@
+
+Hash.Cookie=Hash.extend({initialize:function(name,options){this.name=name;this.options=$extend({'autoSave':true},options||{});this.load();},save:function(){if(this.length==0){Cookie.remove(this.name,this.options);return true;}
+var str=Json.toString(this.obj);if(str.length>4096)return false;Cookie.set(this.name,str,this.options);return true;},load:function(){this.obj=Json.evaluate(Cookie.get(this.name),true)||{};this.setLength();}});Hash.Cookie.Methods={};['extend','set','merge','empty','remove'].each(function(method){Hash.Cookie.Methods[method]=function(){Hash.prototype[method].apply(this,arguments);if(this.options.autoSave)this.save();return this;};});Hash.Cookie.implement(Hash.Cookie.Methods);

@@ -1,0 +1,41 @@
+from django.contrib import admin
+from django.db import models
+from django.db.models import signals
+
+class Categoria(models.Model):
+    nombre=models.CharField(max_length=50)
+    descripcion=models.TextField(blank=True)
+    slug=models.CharField(max_length=60)
+    def permalink(self):
+        return "/blog/cagegoria/%s/" % self.slug
+    def __unicode__(self):
+        return self.nombre
+
+class Entrada(models.Model):
+    titulo= models.CharField(max_length=100)
+    fecha=models.DateTimeField()
+    contenido=models.TextField( help_text='Use <a href="http://daringfireball.net/projects/markdown/syntax">Markdown-syntax</a> and codehighlite')
+    slug=models.CharField(max_length=60)
+    categoria=models.ManyToManyField(Categoria,blank=True)
+    def __unicode__(self):
+        return self.titulo
+    def get_absolute_url(self):
+        return self.permalink()
+    def permalink(self):
+        return "/blog/entrada/%s/%s/%d/%s" % (self.fecha.year, self.fecha.strftime('%b').lower(), self.fecha.day, self.slug )
+    def number_comments(self):
+        return self.comment_set.all().count()
+
+class EntradaAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug':('titulo',)}
+    list_display = ('titulo','fecha','number_comments')
+
+
+class CategoriaAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug':('nombre',)}
+
+
+admin.site.register(Entrada,EntradaAdmin)
+admin.site.register(Categoria,CategoriaAdmin)
+
+#signals.post_save.connect(create_item, sender=Entrada)
