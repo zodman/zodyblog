@@ -1,9 +1,0 @@
-K 10
-svn:ignore
-V 34
-urls.py
-settings.py
-blog.db
-*.pyc
-
-END

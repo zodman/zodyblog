@@ -1,9 +1,0 @@
-{% load markup %}
-{% block contenido %}
-<h1>{{ flatpage.title }}</h1>
-<p>
-{{ flatpage.content|markdown }}
-
-</p>
-
-{% endblock %}

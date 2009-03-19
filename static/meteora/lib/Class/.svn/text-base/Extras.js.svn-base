@@ -1,5 +1,0 @@
-
-var Chain=new Class({chain:function(fn){this.chains=this.chains||[];this.chains.push(fn);return this;},callChain:function(){if(this.chains&&this.chains.length){this.chains.shift().delay(10,this);return true;}else{return false;}},clearChain:function(){this.chains=[];}});var Events=new Class({addEvent:function(type,fn){if(fn!=Class.empty){this.$events=this.$events||{};this.$events[type]=this.$events[type]||[];this.$events[type].include(fn);}
-return this;},fireEvent:function(type,args,delay){if(this.$events&&this.$events[type]){this.$events[type].each(function(fn){fn.create({'bind':this,'delay':delay,'arguments':args})();},this);}
-return this;},removeEvent:function(type,fn){if(this.$events&&this.$events[type])this.$events[type].remove(fn);return this;}});var Options=new Class({setOptions:function(){this.options=$merge.apply(null,[this.options].extend(arguments));if(this.addEvent){for(var option in this.options){if($type(this.options[option]=='function')&&(/^on[A-Z]/).test(option))this.addEvent(option,this.options[option]);}}
-return this;}});
