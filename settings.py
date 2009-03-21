@@ -5,7 +5,6 @@ DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
-from cp import COMPRESS_CSS, COMPRESS_JS
 
 
 # CUSTOM SETTINGS
@@ -105,7 +104,5 @@ INSTALLED_APPS = (
    'zodyblog.blog',
    'zodyblog.links',
    'zodyblog.zodycomments',
-   'zodyblog.compress'
-
 )
 

@@ -7,6 +7,8 @@ padding: 0px;
 body
 {
 background-color: #fff;
+/* background-image:url("/static/images/bg.png");*/
+background-position: center center;
 font-size: 12px;
 font-family: verdana,tahoma,helvetica, sans-serif;
 }
