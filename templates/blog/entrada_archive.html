@@ -15,7 +15,7 @@
                 </a>
             </div>
             <h2> {{e.titulo}}</h2>
-                {{e.contenido|markdown:"codehilite"|urlize }} 
+                {{e.contenido|safe|markdown:"codehilite" }} 
 		<div class="center">
 		{%for i in e.categoria.all %}
                     {% ifequal i.slug 'works'%}
