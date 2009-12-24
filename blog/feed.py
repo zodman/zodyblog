@@ -12,13 +12,17 @@ class LatestEntries(Feed):
 
   def items(self):
     return Entrada.objects.order_by('-fecha')[:20]
+  def item_pubdate(self,item):
+    return item.fecha
 
 class LatestEntriesByCategorie(LatestEntries):
   def get_object(self, bits):
     return bits[0]
   def items(self, obj):
     cats = get_object_or_404(Categoria, slug = obj)
-    print cats
     return cats.entrada_set.all()
+
+  def item_pubdate(self,item):
+    return item.fecha
 
 
