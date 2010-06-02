@@ -1,0 +1,24 @@
+.wmd-preview {
+	border: 1px solid #DDDDDD;
+	width: 610px;
+	margin-left: 106px;
+	padding: 3px;
+}
+.wmd-preview p {
+	margin: 3px !important;
+	padding: 3px !important;
+}
+.wmd-preview h1, .wmd-preview h2 {
+	border: none;
+	background: none;
+	color: #000000;
+}
+.wmd-preview h1 {
+	font-size: large;
+}
+.wmd-preview h2 {
+	font-size:medium;
+}
+.wmd-preview ul, .wmd-preview ol {
+	margin-left: 0px !important;
+}
