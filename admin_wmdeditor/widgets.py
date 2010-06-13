@@ -2,7 +2,7 @@
 
 from django import forms
 from django.utils.safestring import mark_safe
-from django.conf import settings
+from zodyblog import settings
 
 class WmdEditorWidget(forms.Textarea):
     def render(self, name, value, attrs=None):
@@ -17,5 +17,5 @@ class WmdEditorWidget(forms.Textarea):
             getattr(settings, 'WMDEDITOR_MEDIA_PREFIX', settings.MEDIA_URL + 'admin-wmdeditor') + '/wmd/wmd.js',
         )
         css = {
-            'screen': (getattr(settings, 'WMDEDITOR_PREVIEW_CSS', settings.MEDIA_URL + 'admin-wmdeditor/preview.css'),),
+            'screen': (getattr(settings, 'WMDEDITOR_MEDIA_CSS', settings.MEDIA_URL + 'admin-wmdeditor/preview.css'),),
         }

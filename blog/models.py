@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from django.db.models import signals
+from zodyblog.admin_wmdeditor import WmdEditorModelAdmin
 
 class Categoria(models.Model):
     nombre=models.CharField(max_length=50)
@@ -42,11 +43,12 @@ class Entrada(models.Model):
         return ", ".join(cats)
     get_categories.allow_tags =True
 
-class EntradaAdmin(admin.ModelAdmin):
+class EntradaAdmin(WmdEditorModelAdmin):
     prepopulated_fields = {'slug':('titulo',)}
     list_display = ('__unicode__','get_categories','fecha','number_comments')
     list_filter = ('fecha','categoria')
     filter_horizontal = ("categoria",)
+    wmdeditor_fields =('contenido',)
 
 
 

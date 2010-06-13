@@ -4,20 +4,20 @@ DEBUG = True
 #DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
-
-
-
-# CUSTOM SETTINGS
-ADMINS = (
-     ('zodman', 'your_email@domain.com'),
+import os
+def get_dir():
+    return os.path.abspath(os.path.dirname(__file__)) + "/"
+WMDEDITOR_MEDIA_PREFIX ='/static/admin-wmdeditor'
+ADMIN = (
+     ('zodman', 'zodman@gmail.com'),
 )
 
-MANAGERS = ADMINS
+MANAGERS = ADMIN
 #AUTH_PROFILE_MODULE = 'pos.pv.Perfil'
 #DJANGO_USER_MODEL = 'models.Perfil'
-DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'zodyblog'             # Or path to database file if using sqlite3.
-DATABASE_USER = 'root'             # Not used with sqlite3.
+DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+DATABASE_NAME = get_dir() + '/zodyblog.db'             # Or path to database file if using sqlite3.
+DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
@@ -42,11 +42,11 @@ USE_I18N = True
 #STATIC_DOC_ROOT = '/home/edward/django_media/media/'
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-STATIC_DOC_ROOT="/home/zodman/devel/zodyblog/static/"
+STATIC_DOC_ROOT= get_dir() + "/static"
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/media/'
+MEDIA_URL = '/static/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -68,6 +68,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 #    'pagination.middleware.PaginationMiddleware',
 )
 
@@ -89,9 +90,10 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     #'templates',
     #'/home/zodman/Desktop//home/zodman/Desktop/pos_extreme/pos/templates'
-    '/home/zodman/devel/zodyblog/templates'
+    get_dir()+ '/templates'
 )
 INSTALLED_APPS = (
+	'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -99,6 +101,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.databrowse',
     'django.contrib.markup',
+	'django.contrib.flatpages',
 
 
    'zodyblog.blog',
