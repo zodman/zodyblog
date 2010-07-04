@@ -1,0 +1,65 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+@import url("zody.css");
+
+body{
+padding:0px; margin:0px;
+    font-size:12px;
+
+}
+
+#card {
+/*Tamaño de la tarjeta*/
+width:700px;
+height:400px;
+margin-left:auto;
+margin-right:auto;
+margin-top:60px;
+padding:5px;
+}
+.encabezado {
+    margin:5px;
+    padding:5px;
+ height:40px;
+ /*font-family: 'Droid Sans Mono', arial, serif; */
+ font-size:28px;
+}
+#contenido {
+    margin:5px;
+    padding:5px;
+    padding-top:25px;
+}
+#titulo {
+float:right;
+}
+#icons {
+margin:0px;
+padding:0px;
+    padding-bottom:5px;
+    padding-top:5px;
+    width:372px;
+    text-align:center;
+}
+#icons  li:first-child {
+    margin-left:20px;
+    margin-right:10px;
+    text-align:center;
+}
+
+#icons  li:last-child {
+    margin-right:20px;
+    margin-left:10px;
+    text-align:center;
+}
+#icons  li {
+    list-style-type:none;
+    display:inline;
+    margin-left:10px;
+    margin-right:10px;
+    text-align:center;
+    width:32px;
+}
+
+#icons  li img { text-align:center;margin-left:auto; margin-right:auto;}
+img  {
+    border-style:none;
+}
