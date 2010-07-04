@@ -4,16 +4,25 @@
 body{
 padding:0px; margin:0px;
     font-size:12px;
+background:green;
+}
 
+.recuadro {
+background: url("images/bg-container.png");
+}
+
+#container {
+padding:25px;
+width:710px;
+margin-left:auto;
+margin-right:auto;
+margin-top:60px;
 }
 
 #card {
 /*Tamaño de la tarjeta*/
 width:700px;
 height:400px;
-margin-left:auto;
-margin-right:auto;
-margin-top:60px;
 padding:5px;
 }
 .encabezado {
@@ -62,4 +71,15 @@ padding:0px;
 #icons  li img { text-align:center;margin-left:auto; margin-right:auto;}
 img  {
     border-style:none;
+}
+
+#column1 {
+float:left;
+width:300px;
+padding-left:20px;
+}
+#column2 {
+float:left;
+width:300px;
+padding-left:40px;
 }

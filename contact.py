@@ -2,6 +2,7 @@ from django import forms
 from django.utils import simplejson
 from django.http import HttpResponse
 from django.core.mail import EmailMessage
+from django.contrib import messages
 
 class ContactForm(forms.Form):
     name = forms.CharField(help_text="Your name...")
@@ -10,8 +11,8 @@ class ContactForm(forms.Form):
 
 def sendform(request):
     form = ContactForm(request.POST)
+    success,error = None,None
     if request.POST and form.is_valid():
-        message = {'successMessage':"Yeap it send!"}
         data = form.cleaned_data
         email_body = " Nombre %s < %s > \n Mensaje \n %s " %( data['name'], data['email'], data['message'] )
         email = EmailMessage(
@@ -20,12 +21,10 @@ def sendform(request):
             to=['zodman@gmail.com'],
         )
         email.send()
+        messages.success(request,"Mensaje enviado")
+        success = True
     else:
-        message = {
-            'errorMessage':'Error!!!!',
-            'execute': "$('form').innerHTML='<table>%s</table>'; " % form.as_table().replace('\n','')
-        }
-    return HttpResponse(
-        simplejson.dumps(message),
-        mimetype='text/plain'
-        )
+        messages.error(request,"Error al enviar formulario")
+        success = False
+        error = form.errors
+    return HttpResponse(simplejson.dumps({'success':success, "error":error}),mimetype='application/json')

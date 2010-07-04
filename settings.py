@@ -68,9 +68,11 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-#    'pagination.middleware.PaginationMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'zodyblog.AjaxMessage.AjaxMessaging'
 )
+
 
 INTERNAL_IPS = ('127.0.0.1',)
 
@@ -79,7 +81,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
-    "django.core.context_processors.request"
+    "django.core.context_processors.request",
+    'django.contrib.messages.context_processors.messages'
 )
 
 ROOT_URLCONF = 'zodyblog.urls'
@@ -101,11 +104,18 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.databrowse',
     'django.contrib.markup',
-	'django.contrib.flatpages',
+#	'django.contrib.flatpages',
+	'django.contrib.messages',
 
 
    'zodyblog.blog',
    'zodyblog.links',
-   'zodyblog.zodycomments',
+   'zodyblog.conferencias'
+#   'zodyblog.zodycomments',
 )
+try:
+    from local_settings import *
+except ImportError, exp:
+    pass
+
 
