@@ -1,0 +1,69 @@
+{% extends "index.html"%}
+{%block script%}
+<script type="text/javascript">
+$(function (){
+    $("#confs").accordion({fillSpace:true});
+    $("#masconfs").dialog({autoOpen:false,modal:true,width:710,height:400, maxWidth:400});
+});
+</script>
+{%endblock%}
+
+{%block content%}
+<h2>Conferencias<span class="x-small a" onclick="$('#masconfs').dialog('open');"> mostrar mas</span></h2>
+<div style="height:250px;">
+<div id="confs">
+<h5><a href="#">Foresight Linux</a></h5>
+<div>
+<p>Foresight linux es una distribuición de linux relativamente nueva. Esta
+   distro tiene como principal atractivo su manejador de software "conary"
+   que es un sistema de enpaquetamiento revolucionario. Ademas de proveer
+   siempre con la ultima version de gnome. Foresight esta orientado para
+   aquellas personas que no conocen mas alla de la ventana. En esta
+   conferencia se mostrara foresightlinux, su software base, el proceso de
+   desarrollo, y hara una invitacion para participar,contribuir, ser
+   miembro y desarrollador de foresightlinux. (Propuesta para magistral).
+</p>
+</div>
+<h5>
+<a href="#">Empaquetando software para foresight</a></h5>
+<div>
+Foresight linux es una distribuición de linux relativamente nueva. Esta
+   distro tiene como principal atractivo su manejador de software "conary".
+   Esta conferencia se centra en el manejador de paquetes conary.
+   Explicando y mostrando su estructura, manejo. Ademas se mostrara como
+   facilmente podemos empaquetar software para foresight linux. Esta
+   conferencia es para las personas que quieran contribuir con el proyecto
+   y llegar a ser desarrolladores de foresight linux.
+</div>
+<h5><a href="#">Un servidor de hosting casero  = infinitum+gnu/linux</a></h5>
+<div>
+En esta conferencia, se muestra como configurar la red de nuestra casa
+   para lograr montar un servidor de hosting casero, el cual podra mantener
+   las paginas de tus cuates. Algunos tips de seguridad, configuraciones. Y
+   lo atractivo de la conferencia es como configurar dominios pagados, en
+   tu servidor, evitandote el uso de una IP estatica.Esta conferencia no es
+   un howto instalar apache/php/mysq/ftp, si no mas bien como saber como
+   funcionan en conjunto, con el servidor, y saber administrarlo.
+   <a href="http://www.divshare.com/download/3650242-e43">http://www.divshare.com/download/3650242-e43</a>
+
+</div>
+<h5><a href="#">Terminales Tontas, o clientes delgados ( linux terminal server )</a></h5>
+<div>
+Introducción a linux terminal server, como funciona, y distintas formas
+   de realizarlo. Se hablara del proyecto ltsp del laboratorio de
+   mantenimiento en la facultad de matematicas. Casos de exito.
+   Ventajas/desventajas.
+<a href="http://www.divshare.com/download/3650238-98e">http://www.divshare.com/download/3650238-98e</a>
+
+</div>
+</div>
+</div>
+
+<div id="masconfs">
+
+{% include "masconfs.html"%}
+
+</div>
+
+
+{%endblock%}
