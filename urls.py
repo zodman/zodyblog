@@ -19,22 +19,18 @@ urlpatterns = patterns('',
 #    (r'',include('zodyblog.blog.urls')),
     #(r'^$',"django.views.generic.simple.direct_to_template",{"template":"index.html"}),
     url(r'^about/$',"django.views.generic.simple.direct_to_template",{"template":"acerca.html"}, name="yo"),
-    url(r'yo',"django.views.generic.simple.direct_to_template",{"template":"index.html"}, name="home"),
-    url(r'yo',"django.views.generic.simple.direct_to_template",{"template":"index.html"}, name="proyectos"),
-    url(r'yo',"django.views.generic.simple.direct_to_template",{"template":"index.html"}, name="servicios"),
-    url(r'yo',"django.views.generic.simple.direct_to_template",{"template":"index.html"}, name="blog"),
+    url(r'^$',"django.views.generic.simple.direct_to_template",{"template":"index.html"}, name="home"),
+    url(r'^proyectos/$',"django.views.generic.simple.direct_to_template",{"template":"proyectos.html"}, name="proyectos"),
+    (r'^blog/',include('zodyblog.blog.urls')),
     url(r'^conferencias/$',"django.views.generic.simple.direct_to_template",{"template":"conferencias.html"}, name="conferencias"),
 
     (r'^admin/(.*)',admin.site.root),
-    url(r'^contacto2/$','django.views.generic.simple.direct_to_template',{
+    url(r'^contacto/$','django.views.generic.simple.direct_to_template',{
             'template':'contacto.html','extra_context':{'f':ContactForm()},
     },name="contacto"),
     url(r'^contacto/sendform/$','zodyblog.contact.sendform' ,name="post_contacto"),
  
-    (r'^feeds/(?P<url>.*)/$', 
-      'django.contrib.syndication.views.feed',
-     {'feed_dict': feeds}
-    ), 
+    url(r'^feeds/(?P<url>.*)/$','django.contrib.syndication.views.feed',{'feed_dict': feeds}, name="feed"), 
 
     (r'^zodycomments/',include('zodyblog.zodycomments.urls')),
     (r'^links/',include('zodyblog.links.urls')),

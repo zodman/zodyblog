@@ -1,0 +1,142 @@
+{% extends "index.html"%}
+
+{%block script%}
+<script type="text/javascript">
+$(function (){
+    $(".proyect").dialog({autoOpen:false,modal:true, height:300, width:500});
+    $("ul.decor").find("img").tipsy({title:"alt",gravity:'w'});
+});
+
+function show(what){
+    $("#"+what).dialog("open");
+}
+</script>           
+
+{%endblock%}
+{%block content %}
+
+<div class="float-left withborder" style="width:150px">
+    <h2>Codigo</h2>
+    <div>
+    <ul class="decor">
+        <li>
+        <img alt="Codigos en github" src="{{MEDIA_URL}}images/github-logo.png" class="a" onclick ="show('github')">
+        </li>
+        <li>
+        <img  alt="Foresight linux developer" src="{{MEDIA_URL}}images/fl.png" class="a" onclick="show('fl')">
+        </li>
+    </ul>
+    </div>
+</div>
+<div class="float-left withborder" style="width:150px">
+    <h2>Web Apps</h2>
+    <div>
+    <ul class="decor">
+    <li>
+    <img alt="Desarrollo de MisGastos" src="{{MEDIA_URL}}images/proyects/gastos3.png" class="a" onclick="show('misgastos')">
+    </li><li>
+    <img alt="Dise&ntilde;o Web" src="{{MEDIA_URL}}images/proyects/cis_log.png" class="a" onclick="show('cis')">
+    </li>
+    </ul>
+    </div>
+</div>
+<div class="float-left withborder" style="width:150px">
+    <h2>Services</h2>
+    <div>
+    <ul class="decor"><li>
+    <img alt="Tryton ERP" src="{{MEDIA_URL}}images/tryton_logo.png" class="a" onclick="show('tryton')"></li><li>
+    <img alt="Crear linux para aplicaciones" src="{{MEDIA_URL}}images/os.gif" class="a" onclick="show('os')"></li></ul>
+    </div>
+</div>
+
+<div class="proyect" id="github">
+    <span class="ui-corner-all recuadro withborder" style="width:64px;">
+    <a href="http://github.com/zodman">   
+        <img src="{{MEDIA_URL}}images/github-logo.png">
+    </a>
+    </span>
+    La mayoria de mis codigos se encuentran en github. 
+</div>
+<div style="clear:both;"></div>
+<div class="proyect" id="fl">
+    <span class="withborder" style="width:64px;">
+<a href="http://www.foresightlinux.org">    <img src="{{MEDIA_URL}}images/fl.png"></a>
+</span>
+Soy desarrollador linux, de la distro foresight. El cual usa el sistema de paquetes conary. El cual es un sistema que rompe con paradigmas de empaquetamiento
+</div>
+<div style="clear:both;"></div>
+<div class="proyect" id="misgastos">
+    <span class="withborder" style="width:64px;">
+<a href="http://misgastos.zodman.com.mx">    <img src="{{MEDIA_URL}}images/proyects/gastos3.png"></a>
+</span>
+<b>Mis gastos</b> <P>
+Es un pequeño proyecto para llevar los gastos/ingresos que tengo: esta echo en django, html5 canvas para las graficas, jquery.
+</p>
+<br>
+<div class="center">
+<a href="{{MEDIA_URL}}images/proyects/gastos1.png">    <img src="{{MEDIA_URL}}images/proyects/thumb.gastos1.png"></a>
+<a href="{{MEDIA_URL}}images/proyects/gastos2.png">    <img src="{{MEDIA_URL}}images/proyects/thumb.gastos2.png"></a>
+</div>
+</div>
+
+<div style="clear:both;"></div>
+<div class="proyect" id="tryton">
+    <span class="withborder" style="width:64px;">
+<a href="http://www.tryton.org">    <img src="{{MEDIA_URL}}images/tryton_logo.png"></a>
+</span>
+<b>Tryton</b>
+<P>
+Es un sistema ERP empresarial. <br> Consta de:
+
+<div style="clear:both;"></div>
+<ul>
+    <li>Compras</li>
+    <li>Ventas</li>
+    <li>Inventario</li>
+    <li>Finanzas</li>
+    <li> Muchas cosas mas</li>
+</ul>
+   <h4>Ofresco:</h4>
+   <p>
+    Consultoria para su implementacion, Migracion de informacion de otros sistemas, Personalizacion/desarrollo de modulos, Capacitacion, Instalacion de servidor en internet con backups.
+    </p>
+</p>
+<a href="">Presentaci&oacute;n de tryton</a>
+<a href="http://code.google.com/p/tryton/wiki/InstallationOnForesightLinux"> Instalar en foresightlinux</a>
+</div>
+
+<div style="clear:both;"></div>
+<div class="proyect" id="cis">
+    <span class="withborder" style="width:64px;">
+<a href="#">    <img src="{{MEDIA_URL}}images/proyects/cis_log.png"></a>
+</span>
+<b>CIS</b>
+<p>
+Sitio web para una escuela se realizo, dise&ntilde;o e implementaci&oacute;n  de software privado.
+</p>
+<br>
+<div class="center">
+<a href="{{MEDIA_URL}}images/proyects/cis.png"><img src="{{MEDIA_URL}}images/proyects/thumb.cis.png"></a>
+</a>
+</div>
+
+<div style="clear:both;"></div>
+<div class="proyect" id="os">
+    <span class="withborder" style="width:64px;">
+<a href="#">    <img src="{{MEDIA_URL}}images/os.gif"></a>
+</span>
+<b>Desarrollo de Appliance</b>
+<p>
+<a href="http://en.wikipedia.org/wiki/Software_appliance">Appliance</a> es un sistema operativo enfocado a una aplicaci&oacute;n, el cual desarrollo con la tecnologia que uso en <a href="http://www.foresightlinux.org">foresight</a>, Esta tecnoligia es el <a href="http://www.rpath.com">rbuilder y conary de rPath</a>.
+</p>
+<h4>Mis appliances</a>
+<br>
+<div class="center">
+<a href="http://www.rpath.org/web/downloadImage?fileId=41495"><img src="{{MEDIA_URL}}images/proyects/cherokee.png"></a>
+</a>
+</div>
+
+
+
+
+{%endblock%}

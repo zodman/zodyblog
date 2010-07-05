@@ -1,13 +1,10 @@
 {% extends "index.html" %}
 {% load markup %}
-{% load zodytag %}
-{% block contenido %}
+{% block content %}
+<a href="{% url feed "latest"%}"><img class="float-right" src="{{MEDIA_URL}}images/feed.png"></a>
 {% for j in latest_list %}
     {%with j as e %}
-    <div class="entrada-all">
-        <span class="round-up-left"></span>
-        <span class="round-up-right"></span>
-     
+  <div class="entrada-all">
         <div class="entrada">
             <div class="x-small float-right" style="width:100px;height:20px">
                 <a href="{{j.permalink}}">
@@ -15,33 +12,29 @@
                 </a>
             </div>
             <h2> {{e.titulo}}</h2>
-                {{e.contenido|safe|markdown:"codehilite" }} 
-		<div class="center">
-		{%for i in e.categoria.all %}
-                    {% ifequal i.slug 'works'%}
-                        <img src="http://img68.imageshack.us/img68/5930/worksonmymachinelogosmalf7.png"><br>
-			<span style="color:red; font-size:xx-small">Certificated</span>
-                    {% endifequal %}
-		{% endfor %}	
-		</div>
+                {{e.contenido|markdown:"codehilite"|urlize }} 
+            <div class="center">
+            {%for i in e.categoria.all %}
+                        {% ifequal i.slug 'works'%}
+                            <img src="http://img68.imageshack.us/img68/5930/worksonmymachinelogosmalf7.png"><br>
+                <span style="color:red; font-size:xx-small">Certificated</span>
+                        {% endifequal %}
+            {% endfor %}	
+            </div>
 
+        </div>
             <div class="left x-small categorias"> 
                 {%for i in e.categoria.all %}
                     <a href="{{i.permalink}}"> {{i.nombre}}</a>  
                 {% endfor %}
             </div>
+
             <div class="entrada-links">
                 <a href="{{e.permalink}}">Direct Link </a> | 
-                <span class="a" onclick="addComment('{{e.pk}}')"> Comment ({% count_comment e.id %})  </span>
+                <span class="a" onclick="addComment('{{e.pk}}')"> Comment ({# count_comment e.id #})  </span>
             </div>
-        </div>
-        <!--
-        <span class="round-down-left"></span>
-        <span class="round-down-right"></span>
-        -->
 
-    </div>
+ </div>
     {% endwith %}
-<div style="height:20px;"></div>
 {% endfor %}
 {% endblock %}

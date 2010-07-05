@@ -155,7 +155,16 @@ p code {
   text-align:right;
 }
 
-
+.proyect span{
+    padding-top:0px;
+    margin-top:0px;
+    }
+.proyect {
+    width:100%;padding-bottom:10px
+}
+.withborder {
+    padding:4px;width:73px; float:left; margin:10px; margin-right:20px;
+}
 input, textarea {
 border:0px;
     }
@@ -169,3 +178,14 @@ quotes: "\201C" "\201D";
 blockquote:before { content: open-quote; font-weight: bold; }
 blockquote:after { content: close-quote; font-weight: bold; }
 
+.shiruken {
+    background:url("images/shiriouken-med.png") no-repeat center center;
+    width:680px;
+    height:250px;
+}
+
+.entrada {
+
+    width:680px;
+    height:250px;
+}

@@ -1,7 +1,6 @@
 {% extends 'index.html'%}
 {% load markup %}
-{% load zodytag %}
-{% block contenido %}
+{% block content%}
   <h1> {{object.titulo}} </h1>
         <div class="small right"> <a href="{{object.permalink}}">{{object.fecha|date}}</a> </div>
       <p>
@@ -12,7 +11,7 @@
       </div>
       <div class="entrada-links">
       
-       <span class="a" onclick="addComment('{{object.pk}}')"> Comment ({% count_comment object.pk %})  </span>
+       <span class="a" onclick="addComment('{{object.pk}}')"> Comment ({# count_comment object.pk #})  </span>
 
       
       </div>

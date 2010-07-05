@@ -6,7 +6,7 @@ from zodyblog.blog.models import Entrada, Categoria
 class LatestEntries(Feed):
   title ="zodman"
   link  = "/"
-  description ="Blog of zodman"
+  description ="opensrc.mx"
   title_template = "feeds/title.html"
   description_template = "feeds/description.html"
 
