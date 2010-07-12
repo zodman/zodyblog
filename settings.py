@@ -113,9 +113,6 @@ INSTALLED_APPS = (
    'zodyblog.conferencias'
 #   'zodyblog.zodycomments',
 )
-try:
-    from local_settings import *
-except ImportError, exp:
-    pass
+from local_settings import *
 
 

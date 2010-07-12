@@ -18,7 +18,7 @@ def sendform(request):
         email = EmailMessage(
             'zod.com.mx contact from %s' % data['name'],
             email_body,
-            to=['zodman@gmail.com'],
+            to=['andres@opensrc.mx'],
         )
         email.send()
         messages.success(request,"Mensaje enviado")

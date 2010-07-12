@@ -54,6 +54,9 @@ padding:0px;
     text-align:center;
 }
 
+#icons a {
+	color: green;
+}
 #icons  li:last-child {
     margin-right:20px;
     margin-left:10px;
