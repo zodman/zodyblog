@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from django.db.models import signals
+from django.core.urlresolvers import reverse
 from zodyblog.admin_wmdeditor import WmdEditorModelAdmin
 
 class Categoria(models.Model):
@@ -8,9 +9,9 @@ class Categoria(models.Model):
     descripcion=models.TextField(blank=True)
     slug=models.CharField(max_length=60)
     def permalink(self):
-        return "/blog/categoria/%s/" % self.slug
+        return reverse('categoria', args=[self.slug])
     def admin_permalink(self):
-        return "<a href=\"/blog/categoria/%s/\">%s</a>" % (self.slug, self.slug)
+        return "<a href=\"%s\">%s</a>" % ( reverse('categoria',args=[self.slug]), self.slug)
     admin_permalink.allow_tags = True
     def show_admin_permalink(self):
         return "<a href=\"/admin/blog/categoria/%s/\">%s</a>" % (self.pk, self.slug)
@@ -54,7 +55,7 @@ class EntradaAdmin(WmdEditorModelAdmin):
 
 class CategoriaAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug':('nombre',)}
-    list_display = ("__unicode__",'entradas','xmllink','admin_permalink')
+    list_display = ("__unicode__",'slug','entradas','xmllink','admin_permalink')
 #    list_horizontal = ("nombre", )
 
 admin.site.register(Entrada,EntradaAdmin)
