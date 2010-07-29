@@ -14,7 +14,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Example:aaaaaaaaa
     # (r'^zodyblog/', include('zodyblog.foo.urls')),
-#    (r'^static/(?P<path>.*)$', 'django.views.static.serve',         {'document_root': STATIC_DOC_ROOT } ),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve',         {'document_root': STATIC_DOC_ROOT } ),
 #
 #    (r'',include('zodyblog.blog.urls')),
     url(r'^about/$',"django.views.generic.simple.direct_to_template",{"template":"acerca.html"}, name="yo"),

@@ -1,10 +1,9 @@
-{% extends "index.html" %}
+{% extends "blog_base.html" %}
 {% load markup %}
-{% block content %}
-<a href="{% url feed "latest"%}"><img class="float-right" src="{{MEDIA_URL}}images/feed.png"></a>
+{% block blog_posts %}
 {% for j in latest_list %}
     {%with j as e %}
-  <div class="entrada-all">
+  <div class="entrada-all ui-widget-content ui-corner-all">
         <div class="entrada">
             <div class="x-small float-right" style="width:100px;height:20px">
                 <a href="{{j.permalink}}">
@@ -33,8 +32,8 @@
                 <a href="{{e.permalink}}">Direct Link </a> | 
                 <span class="a" onclick="addComment('{{e.pk}}')"> Comment ({# count_comment e.id #})  </span>
             </div>
-
  </div>
     {% endwith %}
 {% endfor %}
+</div>
 {% endblock %}

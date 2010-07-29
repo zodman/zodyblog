@@ -7,8 +7,7 @@ item_dict = {
     'date_field': 'fecha',
     'template_name':'blog/entrada_archive.html',
     'template_object_name': "latest_list",
-    'num_latest':1
-        
+    'num_latest': 5
 }
 
 info_dict = {

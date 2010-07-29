@@ -1,6 +1,6 @@
-{% extends 'index.html'%}
+{% extends 'blog_base.html'%}
 {% load markup %}
-{% block content%}
+{% block blog_post %}
   <h1> {{object.titulo}} </h1>
         <div class="small right"> <a href="{{object.permalink}}">{{object.fecha|date}}</a> </div>
       <p>
@@ -9,12 +9,17 @@
       <div clas="entrada-links">
        {%for i in object.categoria.all %} <a href="{{i.permalink}}">{{i}}</a> {% endfor %}
       </div>
-      <div class="entrada-links">
-      
-       <span class="a" onclick="addComment('{{object.pk}}')"> Comment ({# count_comment object.pk #})  </span>
+        <div class="center">
+            {%for i in object.categoria.all %}
+                        {% ifequal i.slug 'works'%}
+                            <img src="http://img68.imageshack.us/img68/5930/worksonmymachinelogosmalf7.png"><br>
+                <span style="color:red; font-size:xx-small">Certificated</span>
+                        {% endifequal %}
+            {% endfor %}	
+            </div>
 
-      
+      <div class="entrada-links">
+       <span class="a" onclick="addComment('{{object.pk}}')"> Comment ({# count_comment object.pk #})  </span>
       </div>
-	
-    <center><a href="/">BACK</a></center>
+    <center><a href="{% url blog %}">BACK</a></center>
 {%endblock%}

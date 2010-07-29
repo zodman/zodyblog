@@ -184,8 +184,15 @@ blockquote:after { content: close-quote; font-weight: bold; }
     height:250px;
 }
 
-.entrada {
-
-    width:680px;
-    height:250px;
+.entrada-all {
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+    height:auto;
+}
+.submenus {
+    margin-top:10px;
+    margin-left:100px;
 }
