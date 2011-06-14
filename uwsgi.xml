@@ -1,7 +1,6 @@
 <uwsgi>
+    <home>/home/zodman/zodypage/</home>
     <pythonpath>/home/zodman/zodypage/</pythonpath>
-    <pythonpath>/home/zodman/zodypage/zodyblog</pythonpath>
-    <app mountpoint="/">
-        <script>django_wsgi</script>
-    </app>
+    <pythonpath>/home/zodman/zodypage/zodyblog/</pythonpath>
+        <module>django_wsgi</module>
 </uwsgi>

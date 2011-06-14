@@ -13,13 +13,17 @@ $(document).ready( function() {
 <div class="container-blog">
 <div class="submenus">
     <a href="{% url feed "latest"%}"><img class="" src="{{MEDIA_URL}}images/feed.png"></a>
+
+
 </div>
     {%block blog_posts%}
-        
         <div class="entrada-all ui-widget-content ui-corner-all">
             {%block blog_post %}
             {% endblock %}
         </div>
     {%endblock%}
 
+<div>
+		
+</div>
 {%endblock%}

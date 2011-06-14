@@ -20,9 +20,12 @@ def sendform(request):
             email_body,
             to=['andres@opensrc.mx'],
         )
-        email.send()
-        messages.success(request,"Mensaje enviado")
-        success = True
+	try:
+	    email.send()
+            messages.success(request,"Mensaje enviado")
+            success = True
+        except:
+            success = False
     else:
         messages.error(request,"Error al enviar formulario")
         success = False
